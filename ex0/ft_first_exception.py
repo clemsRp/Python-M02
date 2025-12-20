@@ -13,3 +13,10 @@ def check_temperature(temp_str: str):
     elif num > 40:
         print(f"Error: {num}°C is too hot for plants (max 40°C)")
     return num
+
+
+if __name__ == "__main__":
+    check_temperature("abc")
+    check_temperature("25")
+    check_temperature("100")
+    check_temperature("50")
