@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
-def water_plants(plant_list):
+def water_plants(plant_list: list) -> None:
+    '''
+    Simulate the watering of multiple plants
+    '''
     state = True
     print("Opening watering system")
     try:
@@ -15,7 +18,11 @@ def water_plants(plant_list):
             print("Watering completed successfully!")
 
 
-def test_watering_system():
+def test_watering_system() -> None:
+    '''
+    Test the error handling of the water_plants function
+    with different list of plants
+    '''
     print("Testing normal watering...")
     water_plants(["Tomato", "Carrots", "Lettuce"])
     print()

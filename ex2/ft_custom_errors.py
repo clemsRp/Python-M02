@@ -21,17 +21,26 @@ class WaterError(GardenError):
     pass
 
 
-def check_plant_error(is_wilting: bool):
+def check_plant_error(is_wilting: bool) -> None:
+    '''
+    Raise a PlantError
+    '''
     if is_wilting:
         raise PlantError("The tomato plant is wilting!")
 
 
-def check_water_error(level: int):
+def check_water_error(level: int) -> None:
+    '''
+    Raise WaterError
+    '''
     if level <= 0:
         raise WaterError("Not enough water in the tank!")
 
 
-def test_custom_errors():
+def test_custom_errors() -> None:
+    '''
+    Test multiple custom errors
+    '''
     print("Testing PlantError...")
     try:
         check_plant_error(True)

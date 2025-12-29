@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
 
-def check_plant_health(plant_name: str, water_level: int, sunlight_hours: int):
+def check_plant_health(plant_name: str, water_level: int,
+                       sunlight_hours: int) -> None:
+    '''
+    Raise an error if the values are incorrects,
+    else print a message about the plant
+    '''
     if plant_name == "":
         raise ValueError("Error: Plant name cannot be empty!")
     elif water_level < 1:
@@ -19,7 +24,11 @@ def check_plant_health(plant_name: str, water_level: int, sunlight_hours: int):
         print(f"Plant '{plant_name}' is healthy!")
 
 
-def test_plant_checks():
+def test_plant_checks() -> None:
+    '''
+    Test the error handling of the check_plant_health function
+    with different plant values
+    '''
     print("Testing good values...")
     try:
         check_plant_health("Rose", 8, 5)

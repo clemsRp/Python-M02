@@ -37,7 +37,7 @@ class Plant:
         self.water = water
         self.sun = sun
 
-    def check_health(self):
+    def check_health(self) -> None:
         if self.water < 1:
             raise WaterError(f"Water level {self.water} is too low (min 1)")
         elif self.water > 10:
@@ -85,7 +85,11 @@ class GardenManager:
                 print(f"Error checking {plant.name}:", e)
 
 
-def main_test():
+def main_test() -> None:
+    '''
+    Test all the different possible error cases,
+    checking all the error are correctly handle
+    '''
     garden = GardenManager("Alice")
     print("Adding plants to garden...")
     garden.add_plant("Tomato", 5, 8)

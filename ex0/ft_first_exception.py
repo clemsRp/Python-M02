@@ -1,6 +1,10 @@
 #!/usr/bin/env python3
 
-def check_temperature(temp_str: str):
+def check_temperature(temp_str: str) -> int:
+    '''
+    Print a message depending the temperature,
+    then return the temperature if there are no error
+    '''
     try:
         num = int(temp_str)
     except Exception:
