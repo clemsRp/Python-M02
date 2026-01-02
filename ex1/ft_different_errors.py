@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 
 def garden_operations() -> None:
+    '''
+    Show the errors handles in other functions
+    '''
     print(int("abc"))
     print(10 / 0)
     with open("missing.txt", "r") as f:
@@ -10,6 +13,9 @@ def garden_operations() -> None:
 
 
 def test_value_error() -> None:
+    '''
+    Test if a value error occurs
+    '''
     print("Testing ValueError...")
     try:
         num = int("abc")
@@ -25,6 +31,9 @@ def test_value_error() -> None:
 
 
 def test_fine_not_found_error() -> None:
+    '''
+    Test if a file not found error occurs
+    '''
     print("Testing FileNotFoundError...")
     try:
         with open("missing.txt", "r") as f:
@@ -34,6 +43,9 @@ def test_fine_not_found_error() -> None:
 
 
 def test_key_error() -> None:
+    '''
+    Test if a key error occurs
+    '''
     print("Testing KeyError...")
     try:
         alphabet = {"voyelles": 6, "consonnes": 20}
@@ -44,6 +56,9 @@ def test_key_error() -> None:
 
 
 def test_all() -> None:
+    '''
+    Test if an error occurs
+    '''
     print("Testing multiple errors together...")
     try:
         int("abc")

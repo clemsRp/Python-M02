@@ -29,8 +29,14 @@ class SunlightError(GardenError):
 
 
 class Plant:
+    '''
+    Simulate the behaviour of a plant
+    '''
 
-    def __init__(self, name: str, water: int, sun: int):
+    def __init__(self, name: str, water: int, sun: int) -> None:
+        '''
+        Initialize the plant
+        '''
         if name == "":
             raise PlantError("Plant name cannot be empty!")
         self.name = name
@@ -38,6 +44,9 @@ class Plant:
         self.sun = sun
 
     def check_health(self) -> None:
+        '''
+        Raise an error if one of the plant's value is invalid
+        '''
         if self.water < 1:
             raise WaterError(f"Water level {self.water} is too low (min 1)")
         elif self.water > 10:
@@ -51,12 +60,21 @@ class Plant:
 
 
 class GardenManager:
+    '''
+    Simulate the behaviour of a garden manager
+    '''
 
-    def __init__(self, owner: str):
+    def __init__(self, owner: str) -> None:
+        '''
+        Initialize the garden manager
+        '''
         self.owner = owner
         self.plants = []
 
-    def add_plant(self, name, water, sun):
+    def add_plant(self, name, water, sun) -> None:
+        '''
+        Add a plant to the garden manager
+        '''
         try:
             plant = Plant(name, water, sun)
             self.plants.append(plant)
@@ -64,7 +82,10 @@ class GardenManager:
         except PlantError as e:
             print("Error adding plant:", e)
 
-    def water_plants(self):
+    def water_plants(self) -> None:
+        '''
+        Simulate the watering of all plants
+        '''
         print("Opening watering system")
         try:
             for plant in self.plants:
@@ -75,7 +96,10 @@ class GardenManager:
         finally:
             print("Closing watering system (cleanup)")
 
-    def check_health(self):
+    def check_health(self) -> None:
+        '''
+        Verify if all plant's health is good
+        '''
         for plant in self.plants:
             try:
                 plant.check_health()
